@@ -19,23 +19,24 @@ $page = $user->getPage();
 
 if ($text == "/start") {
     chooseLanguage();
-} else {
-    switch ($page) {
-        case "language":
-            switch ($text) {
-                case "English 🇺🇸":
-                    $user->setLanguage("eng");
-                    break;
-                case "Русский 🇷🇺":
-                    $user->setLanguage("ru");
-                    break;
-                case "O'zbek tili 🇺🇿":
-                    $user->setLanguage("uz");
-                    break;
-            }
-            break;
-    }
 }
+//else {
+//    switch ($page) {
+//        case "language":
+//            switch ($text) {
+//                case "English 🇺🇸":
+//                    $user->setLanguage("eng");
+//                    break;
+//                case "Русский 🇷🇺":
+//                    $user->setLanguage("ru");
+//                    break;
+//                case "O'zbek tili 🇺🇿":
+//                    $user->setLanguage("uz");
+//                    break;
+//            }
+//            break;
+//    }
+//}
 
 
 function chooseLanguage()
