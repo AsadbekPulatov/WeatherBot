@@ -29,8 +29,7 @@ $page = $user->getPage();
 
 if ($text == "/start") {
     chooseLanguage();
-}
-else {
+} else {
     switch ($page) {
         case "language":
             switch ($text) {
@@ -45,6 +44,13 @@ else {
                 case "O'zbek tili 🇺🇿":
                     $user->setLanguage("uz");
                     showMainPage();
+                    break;
+            }
+            break;
+        case "main":
+            switch ($text) {
+                case $user->GetText("menu_settings"):
+                    chooseLanguage();
                     break;
             }
             break;
