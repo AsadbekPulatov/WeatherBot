@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e1d0e54-33b1-443e-bcf2-989f92263c42" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,14 +85,7 @@
       <workItem from="1663237924577" duration="810000" />
       <workItem from="1663238748902" duration="1287000" />
       <workItem from="1663301770779" duration="1729000" />
-      <workItem from="1663318307335" duration="1287000" />
-    </task>
-    <task id="LOCAL-00051" summary="OOP qoshdim">
-      <created>1662616965164</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1662616965164</updated>
+      <workItem from="1663318307335" duration="2353000" />
     </task>
     <task id="LOCAL-00052" summary="OOP qoshdim">
       <created>1662617417405</created>
@@ -430,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663236815220</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="main page created">
+      <created>1663319710618</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1663319710619</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,6 +447,7 @@
     <MESSAGE value="TrainingCenter created inline button" />
     <MESSAGE value="Show centres" />
     <MESSAGE value="finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished" />
+    <MESSAGE value="main page created" />
+    <option name="LAST_COMMIT_MESSAGE" value="main page created" />
   </component>
 </project>

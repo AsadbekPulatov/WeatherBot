@@ -49,7 +49,6 @@ class User
 
     public function GetText($keyword){
         global $connect;
-
         $language = $this->getLanguage();
         $sql = "SELECT * FROM texts WHERE keyword = '{$keyword}'";
         $result = $connect->query($sql);

@@ -11,13 +11,51 @@ $message = $data['message'];
 
 $user = new User($chat_id);
 //$admin_chat_id = 967469906;
-
-if ($text == "/start"){
-    showMainPage();
+$page = $user->getPage();
+if ($text == "/start") {
+    chooseLanguage();
+} else {
+    switch ($page) {
+        case "language":
+            switch ($text) {
+                case "English 🇺🇸":
+                    $user->setLanguage("eng");
+                    break;
+                case "Русский 🇷🇺":
+                    $user->setLanguage("ru");
+                    break;
+                case "O'zbek tili 🇺🇿":
+                    $user->setLanguage("uz");
+                    break;
+            }
+            break;
+    }
 }
 
-function showMainPage(){
-    global $chat_id,$telegram, $user;
+
+function chooseLanguage()
+{
+    global $chat_id, $telegram, $user;
+    $user->createUser();
+    $user->setPage("language");
+
+    $text = "Please select a language.\nПожалуйста выберите язык.\nIltimos, tilni tanlang.";
+
+    $options = [
+        [$telegram->buildKeyboardButton("English 🇺🇸"), $telegram->buildKeyboardButton("Русский 🇷🇺"), $telegram->buildKeyboardButton("O'zbek tili 🇺🇿")]
+    ];
+    $keyboard = $telegram->buildKeyBoard($options, false, true);
+    $content = [
+        'chat_id' => $chat_id,
+        'reply_markup' => $keyboard,
+        'text' => $text,
+    ];
+    $telegram->sendMessage($content);
+}
+
+function showMainPage()
+{
+    global $chat_id, $telegram, $user;
     $user->createUser();
     $user->setPage("main");
     $user->setLanguage("uz");
@@ -27,7 +65,7 @@ function showMainPage(){
     $options = [
         [$telegram->buildKeyboardButton("button")]
     ];
-    $keyboard = $telegram->buildKeyBoard($options,false, true);
+    $keyboard = $telegram->buildKeyBoard($options, false, true);
     $content = [
         'chat_id' => $chat_id,
         'reply_markup' => $keyboard,
