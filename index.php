@@ -3,6 +3,15 @@
 include 'Telegram.php';
 require_once 'User.php';
 
+//$key = "a85c63aee77341ee89b50718223004";
+
+
+//7 day
+//http://api.weatherapi.com/v1/forecast.json?key=a85c63aee77341ee89b50718223004&q=Urganch&days=7&aqi=no&alerts=no
+
+//History
+//http://api.weatherapi.com/v1/future.json?key=a85c63aee77341ee89b50718223004&q=Urganch&dt=2022-10-16
+
 $bot_token = "5645695314:AAGiw1PMNkMLbzqc-RVWYOMtG-QQPpdCnjY";
 $telegram = new Telegram($bot_token);
 
@@ -27,12 +36,15 @@ else {
             switch ($text) {
                 case "English 🇺🇸":
                     $user->setLanguage("eng");
+                    showMainPage();
                     break;
                 case "Русский 🇷🇺":
                     $user->setLanguage("ru");
+                    showMainPage();
                     break;
                 case "O'zbek tili 🇺🇿":
                     $user->setLanguage("uz");
+                    showMainPage();
                     break;
             }
             break;
@@ -63,14 +75,15 @@ function chooseLanguage()
 function showMainPage()
 {
     global $chat_id, $telegram, $user;
-    $user->createUser();
     $user->setPage("main");
-    $user->setLanguage("uz");
 
     $text = $user->GetText("main");
 
     $options = [
-        [$telegram->buildKeyboardButton("button")]
+        [$telegram->buildKeyboardButton($user->GetText("menu_now"))],
+        [$telegram->buildKeyboardButton($user->GetText("menu_today")), $telegram->buildKeyboardButton($user->GetText("menu_tomorrow"))],
+        [$telegram->buildKeyboardButton($user->GetText("menu_day"))],
+        [$telegram->buildKeyboardButton($user->GetText("menu_settings"))],
     ];
     $keyboard = $telegram->buildKeyBoard($options, false, true);
     $content = [

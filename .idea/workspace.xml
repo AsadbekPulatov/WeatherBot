@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e1d0e54-33b1-443e-bcf2-989f92263c42" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,14 +84,7 @@
       <workItem from="1663237924577" duration="810000" />
       <workItem from="1663238748902" duration="1287000" />
       <workItem from="1663301770779" duration="1729000" />
-      <workItem from="1663318307335" duration="3415000" />
-    </task>
-    <task id="LOCAL-00057" summary="OOP qoshdim">
-      <created>1662619571941</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1662619571942</updated>
+      <workItem from="1663318307335" duration="6628000" />
     </task>
     <task id="LOCAL-00058" summary="OOP qoshdim">
       <created>1662620711809</created>
@@ -428,7 +422,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663321659910</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="bug fixed">
+      <created>1663321801139</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1663321801139</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
