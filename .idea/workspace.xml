@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3e1d0e54-33b1-443e-bcf2-989f92263c42" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-    </list>
+    <list default="true" id="3e1d0e54-33b1-443e-bcf2-989f92263c42" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,28 +81,7 @@
       <workItem from="1663237924577" duration="810000" />
       <workItem from="1663238748902" duration="1287000" />
       <workItem from="1663301770779" duration="1729000" />
-      <workItem from="1663318307335" duration="2750000" />
-    </task>
-    <task id="LOCAL-00053" summary="OOP qoshdim">
-      <created>1662618028525</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1662618028525</updated>
-    </task>
-    <task id="LOCAL-00054" summary="OOP qoshdim">
-      <created>1662618557936</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1662618557936</updated>
-    </task>
-    <task id="LOCAL-00055" summary="OOP qoshdim">
-      <created>1662618982484</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1662618982484</updated>
+      <workItem from="1663318307335" duration="3104000" />
     </task>
     <task id="LOCAL-00056" summary="OOP qoshdim">
       <created>1662619120921</created>
@@ -429,14 +405,34 @@
       <option name="project" value="LOCAL" />
       <updated>1663320779182</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="bug fixed">
+      <created>1663321135117</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1663321135117</updated>
+    </task>
+    <task id="LOCAL-00103" summary="bug fixed">
+      <created>1663321286724</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1663321286724</updated>
+    </task>
+    <task id="LOCAL-00104" summary="bug fixed">
+      <created>1663321378622</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1663321378622</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="bug fixed" />
     <MESSAGE value="language page compileted" />
     <MESSAGE value="Districts page compileted" />
     <MESSAGE value="Subjects page compileted" />
@@ -448,6 +444,7 @@
     <MESSAGE value="finished" />
     <MESSAGE value="main page created" />
     <MESSAGE value="language created" />
-    <option name="LAST_COMMIT_MESSAGE" value="language created" />
+    <MESSAGE value="bug fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fixed" />
   </component>
 </project>
