@@ -4,14 +4,18 @@ include 'Telegram.php';
 
 $bot_token = "5645695314:AAGiw1PMNkMLbzqc-RVWYOMtG-QQPpdCnjY";
 $telegram = new Telegram($bot_token);
+
 $chat_id = $telegram->ChatID();
 $text = $telegram->Text();
 $data = $telegram->getData();
 $message = $data['message'];
 
 $user = new User($chat_id);
+
 //$admin_chat_id = 967469906;
+
 $page = $user->getPage();
+
 if ($text == "/start") {
     chooseLanguage();
 } else {
@@ -36,7 +40,7 @@ if ($text == "/start") {
 function chooseLanguage()
 {
     global $chat_id, $telegram, $user;
-    $user->createUser();
+    $user->createUser($chat_id);
     $user->setPage("language");
 
     $text = "Please select a language.\nПожалуйста выберите язык.\nIltimos, tilni tanlang.";
