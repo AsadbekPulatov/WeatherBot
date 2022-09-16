@@ -7,6 +7,7 @@ $telegram = new Telegram($bot_token);
 
 $chat_id = $telegram->ChatID();
 $text = $telegram->Text();
+
 $data = $telegram->getData();
 $message = $data['message'];
 
