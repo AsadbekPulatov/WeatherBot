@@ -1,42 +1,43 @@
 <?php
-echo "1";
+
 include 'Telegram.php';
+require_once 'User.php';
 
 $bot_token = "5645695314:AAGiw1PMNkMLbzqc-RVWYOMtG-QQPpdCnjY";
 $telegram = new Telegram($bot_token);
 
 $chat_id = $telegram->ChatID();
 $text = $telegram->Text();
-echo "2";
+
 $data = $telegram->getData();
 $message = $data['message'];
 
 $user = new User($chat_id);
 
 //$admin_chat_id = 967469906;
-echo "3";
+
 $page = $user->getPage();
-echo "5";
+
 if ($text == "/start") {
     chooseLanguage();
 }
-//else {
-//    switch ($page) {
-//        case "language":
-//            switch ($text) {
-//                case "English 🇺🇸":
-//                    $user->setLanguage("eng");
-//                    break;
-//                case "Русский 🇷🇺":
-//                    $user->setLanguage("ru");
-//                    break;
-//                case "O'zbek tili 🇺🇿":
-//                    $user->setLanguage("uz");
-//                    break;
-//            }
-//            break;
-//    }
-//}
+else {
+    switch ($page) {
+        case "language":
+            switch ($text) {
+                case "English 🇺🇸":
+                    $user->setLanguage("eng");
+                    break;
+                case "Русский 🇷🇺":
+                    $user->setLanguage("ru");
+                    break;
+                case "O'zbek tili 🇺🇿":
+                    $user->setLanguage("uz");
+                    break;
+            }
+            break;
+    }
+}
 
 
 function chooseLanguage()
