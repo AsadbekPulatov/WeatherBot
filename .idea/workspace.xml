@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3e1d0e54-33b1-443e-bcf2-989f92263c42" name="Changes" comment="" />
+    <list default="true" id="3e1d0e54-33b1-443e-bcf2-989f92263c42" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,24 +32,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
-    "import_schema_mapping": "<schema-mapping><databases><list><schema-mapping-item><source-data-source-id>95160b69-918f-4327-90af-2cb9b693ea26</source-data-source-id><source-path>schema/\"heroku_7784e9053df43f3\"</source-path><target-data-source-id>95160b69-918f-4327-90af-2cb9b693ea26</target-data-source-id><target-path>schema/\"heroku_7784e9053df43f3\"</target-path></schema-mapping-item></list></databases></schema-mapping>",
-    "last_opened_file_path": "D:/xampp/htdocs/TelegramBot/UzbEduBot",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.tabs",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
+    &quot;import_schema_mapping&quot;: &quot;&lt;schema-mapping&gt;&lt;databases&gt;&lt;list&gt;&lt;schema-mapping-item&gt;&lt;source-data-source-id&gt;95160b69-918f-4327-90af-2cb9b693ea26&lt;/source-data-source-id&gt;&lt;source-path&gt;schema/\&quot;heroku_7784e9053df43f3\&quot;&lt;/source-path&gt;&lt;target-data-source-id&gt;95160b69-918f-4327-90af-2cb9b693ea26&lt;/target-data-source-id&gt;&lt;target-path&gt;schema/\&quot;heroku_7784e9053df43f3\&quot;&lt;/target-path&gt;&lt;/schema-mapping-item&gt;&lt;/list&gt;&lt;/databases&gt;&lt;/schema-mapping&gt;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/xampp/htdocs/TelegramBot/UzbEduBot&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\TelegramBot\UzbEduBot" />
@@ -79,7 +83,9 @@
       <workItem from="1663069054160" duration="377000" />
       <workItem from="1663236677630" duration="756000" />
       <workItem from="1663237924577" duration="810000" />
-      <workItem from="1663238748902" duration="319000" />
+      <workItem from="1663238748902" duration="1287000" />
+      <workItem from="1663301770779" duration="1729000" />
+      <workItem from="1663318307335" duration="1287000" />
     </task>
     <task id="LOCAL-00051" summary="OOP qoshdim">
       <created>1662616965164</created>
