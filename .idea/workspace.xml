@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e1d0e54-33b1-443e-bcf2-989f92263c42" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,14 +85,7 @@
       <workItem from="1663301770779" duration="1729000" />
       <workItem from="1663318307335" duration="7307000" />
       <workItem from="1663385652205" duration="3834000" />
-      <workItem from="1663403067042" duration="7552000" />
-    </task>
-    <task id="LOCAL-00066" summary="TrainingCenter created inline button">
-      <created>1662821166187</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1662821166187</updated>
+      <workItem from="1663403067042" duration="8004000" />
     </task>
     <task id="LOCAL-00067" summary="TrainingCenter created inline button">
       <created>1662821253887</created>
@@ -430,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663411415100</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="weather today successfully bug fixed">
+      <created>1663412117257</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1663412117258</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -456,6 +456,7 @@
     <MESSAGE value="weather now successfully" />
     <MESSAGE value="weather now successfully bug fixed" />
     <MESSAGE value="weather today successfully" />
-    <option name="LAST_COMMIT_MESSAGE" value="weather today successfully" />
+    <MESSAGE value="weather today successfully bug fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="weather today successfully bug fixed" />
   </component>
 </project>

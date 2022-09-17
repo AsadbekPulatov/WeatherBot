@@ -117,6 +117,25 @@ if ($text == "/start") {
         case "today":
             showWeatherToday($text);
             break;
+        case "weather_tomorrow":
+            switch ($text) {
+                case $user->GetText("write_location"):
+                    $user->setPage("tomorrow");
+                    askCity();
+                    break;
+                default:
+                    $latitude = $message['location']['latitude'];
+                    $longitude = $message['location']['longitude'];
+                    if ($latitude != NULL) {
+                        $q = "$latitude,$longitude";
+                        showWeatherTomorrow($q);
+                    }
+                    break;
+            }
+            break;
+        case "tomorrow":
+            showWeatherTomorrow($text);
+            break;
     }
 }
 
@@ -215,6 +234,25 @@ function showWeatherToday($q)
 {
     global $weather, $telegram, $chat_id, $user;
     $data = $weather->today($q);
+    $text = $user->GetText("text_name") . $data['location']['name'] . "\n";
+    foreach ($data["forecast"]["forecastday"][0]["hour"] as $hour) {
+        $text .= "----------------------------------------------------------------\n";
+        $text .= $user->GetText("text_temperature") . $hour['temp_c'] . "\n";
+        $text .= $user->GetText("text_wind") . $hour['wind_mph'] . "\n";
+        $text .= $user->GetText("text_humidity") . $hour['humidity'] . "\n";
+        $text .= $user->GetText("text_time") . $hour['time'] . "\n";
+    }
+    $content = [
+        'chat_id' => $chat_id,
+        'text' => $text,
+    ];
+    $telegram->sendMessage($content);
+}
+
+function showWeatherTomorrow($q)
+{
+    global $weather, $telegram, $chat_id, $user;
+    $data = $weather->tomorrow($q);
     $text = $user->GetText("text_name") . $data['location']['name'] . "\n";
     foreach ($data["forecast"]["forecastday"][0]["hour"] as $hour) {
         $text .= "----------------------------------------------------------------\n";
