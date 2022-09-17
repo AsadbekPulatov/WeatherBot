@@ -48,19 +48,23 @@ if ($text == "/start") {
             switch ($text) {
                 case $user->GetText("menu_now"):
                     $data = $weather->now("Urganch");
-                    SendMessage(json_encode($data, JSON_PRETTY_PRINT));
+                    foreach ($data as $item)
+                    SendMessage(json_encode($item, JSON_PRETTY_PRINT));
                     break;
                 case $user->GetText("menu_today"):
                     $data = $weather->today("Urganch");
-                    SendMessage(json_encode($data, JSON_PRETTY_PRINT));
+                    foreach ($data as $item)
+                    SendMessage(json_encode($item, JSON_PRETTY_PRINT));
                     break;
                 case $user->GetText("menu_tomorrow"):
                     $data = $weather->tomorrow("Urganch");
-                    SendMessage(json_encode($data, JSON_PRETTY_PRINT));
+                    foreach ($data as $item)
+                    SendMessage(json_encode($item, JSON_PRETTY_PRINT));
                     break;
                 case $user->GetText("menu_day"):
                     $data = $weather->week("Urganch");
-                    SendMessage(json_encode($data, JSON_PRETTY_PRINT));
+                    foreach ($data as $item)
+                    SendMessage(json_encode($item, JSON_PRETTY_PRINT));
                     break;
                 case $user->GetText("menu_settings"):
                     chooseLanguage();
