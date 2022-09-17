@@ -2,12 +2,9 @@
 
 include 'Telegram.php';
 require_once 'User.php';
+require_once 'Weather.php';
 
-//$key = "a85c63aee77341ee89b50718223004";
-
-
-//7 day
-//http://api.weatherapi.com/v1/forecast.json?key=a85c63aee77341ee89b50718223004&q=Urganch&days=7&aqi=no&alerts=no
+$key = "a85c63aee77341ee89b50718223004";
 
 //History
 //http://api.weatherapi.com/v1/future.json?key=a85c63aee77341ee89b50718223004&q=Urganch&dt=2022-10-16
@@ -22,7 +19,7 @@ $data = $telegram->getData();
 $message = $data['message'];
 
 $user = new User($chat_id);
-
+$weather = new Weather($key);
 //$admin_chat_id = 967469906;
 
 $page = $user->getPage();
@@ -49,6 +46,22 @@ if ($text == "/start") {
             break;
         case "main":
             switch ($text) {
+                case $user->GetText("menu_now"):
+                    $data = $weather->now("Urganch");
+                    SendMessage(json_encode($data, JSON_PRETTY_PRINT));
+                    break;
+                case $user->GetText("menu_today"):
+                    $data = $weather->today("Urganch");
+                    SendMessage(json_encode($data, JSON_PRETTY_PRINT));
+                    break;
+                case $user->GetText("menu_tomorrow"):
+                    $data = $weather->tomorrow("Urganch");
+                    SendMessage(json_encode($data, JSON_PRETTY_PRINT));
+                    break;
+                case $user->GetText("menu_day"):
+                    $data = $weather->week("Urganch");
+                    SendMessage(json_encode($data, JSON_PRETTY_PRINT));
+                    break;
                 case $user->GetText("menu_settings"):
                     chooseLanguage();
                     break;
@@ -100,5 +113,14 @@ function showMainPage()
     $telegram->sendMessage($content);
 }
 
+function SendMessage($text)
+{
+    global $chat_id, $telegram;
+    $content = [
+        'chat_id' => $chat_id,
+        'text' => $text,
+    ];
+    $telegram->sendMessage($content);
+}
 
 ?>
