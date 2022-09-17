@@ -48,28 +48,28 @@ if ($text == "/start") {
             switch ($text) {
                 case $user->GetText("menu_now"):
                     $user->setPage("weather_now");
-                    askCity();
+                    askLocation();
 //                    $data = $weather->now("Urganch");
 //                    foreach ($data as $item)
 //                    SendMessage(json_encode($item, JSON_PRETTY_PRINT));
                     break;
                 case $user->GetText("menu_today"):
                     $user->setPage("weather_today");
-                    askCity();
+                    askLocation();
 //                    $data = $weather->today("Urganch");
 //                    foreach ($data as $item)
 //                    SendMessage(json_encode($item, JSON_PRETTY_PRINT));
                     break;
                 case $user->GetText("menu_tomorrow"):
                     $user->setPage("weather_tomorrow");
-                    askCity();
+                    askLocation();
 //                    $data = $weather->tomorrow("Urganch");
 //                    foreach ($data as $item)
 //                    SendMessage(json_encode($item, JSON_PRETTY_PRINT));
                     break;
                 case $user->GetText("menu_day"):
                     $user->setPage("weather_week");
-                    askCity();
+                    askLocation();
 //                    $data = $weather->week("Urganch");
 //                    foreach ($data as $item)
 //                    SendMessage(json_encode($item, JSON_PRETTY_PRINT));
@@ -78,6 +78,25 @@ if ($text == "/start") {
                     chooseLanguage();
                     break;
             }
+            break;
+        case "weather_now":
+            switch ($text) {
+                case $user->GetText("write_location"):
+                    $user->setPage("now");
+                    askCity();
+                    break;
+                default:
+                    $latitude = $message['location']['latitude'];
+                    $longitude = $message['location']['longitude'];
+                    if ($latitude != NULL) {
+                        $q = "$latitude,$longitude";
+                        showWeatherNow($q);
+                    }
+                    break;
+            }
+            break;
+        case "now":
+            showWeatherNow($text);
             break;
     }
 }
@@ -125,7 +144,8 @@ function showMainPage()
     $telegram->sendMessage($content);
 }
 
-function askCity(){
+function askLocation()
+{
     global $chat_id, $telegram, $user;
 //    $user->setPage("main");
 
@@ -144,6 +164,34 @@ function askCity(){
     $telegram->sendMessage($content);
 }
 
+function askCity()
+{
+    global $chat_id, $telegram, $user;
+    $text = $user->GetText("text_write_location");
+    $content = [
+        'chat_id' => $chat_id,
+        'text' => $text,
+    ];
+    $telegram->sendMessage($content);
+}
+
+function showWeatherNow($q)
+{
+    global $weather, $telegram, $chat_id, $user;
+    $data = $weather->now($q);
+    $text = $user->GetText("text_name") . $data['location']['name'] . "\n" .
+        $user->GetText("text_temperature") . $data['current']['temp_c'] . "\n" .
+        $user->GetText("text_wind") . $data['current']['wind_mph'] . "\n" .
+        $user->GetText("text_humidity") . $data['current']['humidity'] . "\n" .
+        $user->GetText("text_time") . $data['current']['last_updated'] . "\n";
+    $content = [
+        'chat_id' => $chat_id,
+        'photo' => $data['current']['condition']['icon'],
+        'caption' => $text,
+    ];
+    $telegram->sendPhoto($content);
+}
+
 function SendMessage($text)
 {
     global $chat_id, $telegram;
@@ -153,14 +201,6 @@ function SendMessage($text)
     ];
     $telegram->sendMessage($content);
 }
-
-//$show = " 📍 Name: " . $data['location']['name'] . "\n" .
-//    " 📍 Region: " . $data['location']['region'] . "\n" .
-//    " 📍 Country: " . $data['location']['country'] . "\n" .
-//    " 🌡 Temperature: " . $data['current']['temp_c'] . "\n" .
-//    " 🌪 Wind: " . $data['current']['wind_mph'] . "\n" .
-//    " 💧 Humidity: " . $data['current']['humidity'] . "\n" .
-//    " 🕔 Time: " . $data['current']['last_updated'] . "\n";
 
 
 ?>
