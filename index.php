@@ -216,7 +216,7 @@ function showWeatherToday($q)
     global $weather, $telegram, $chat_id, $user;
     $data = $weather->today($q);
     $text = $user->GetText("text_name") . $data['location']['name'] . "\n";
-    foreach ($data["forecast"]["forecastday"]["hour"] as $hour) {
+    foreach ($data["forecast"]["forecastday"][0]["hour"] as $hour) {
         $text .= "----------------------------------------------------------------\n";
         $text .= $user->GetText("text_temperature") . $hour['temp_c'] . "\n";
         $text .= $user->GetText("text_wind") . $hour['wind_mph'] . "\n";
