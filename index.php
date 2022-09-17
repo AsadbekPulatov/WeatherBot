@@ -186,10 +186,10 @@ function showWeatherNow($q)
         $user->GetText("text_time") . $data['current']['last_updated'] . "\n";
     $content = [
         'chat_id' => $chat_id,
-        'photo' => $data['current']['condition']['icon'],
-        'caption' => $text,
+//        'photo' => $data['current']['condition']['icon'],
+        'text' => $text,
     ];
-    $telegram->sendPhoto($content);
+    $telegram->sendMessage($content);
 }
 
 function SendMessage($text)
