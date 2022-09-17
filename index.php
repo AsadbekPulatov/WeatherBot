@@ -47,24 +47,32 @@ if ($text == "/start") {
         case "main":
             switch ($text) {
                 case $user->GetText("menu_now"):
-                    $data = $weather->now("Urganch");
-                    foreach ($data as $item)
-                    SendMessage(json_encode($item, JSON_PRETTY_PRINT));
+                    $user->setPage("weather_now");
+                    askCity();
+//                    $data = $weather->now("Urganch");
+//                    foreach ($data as $item)
+//                    SendMessage(json_encode($item, JSON_PRETTY_PRINT));
                     break;
                 case $user->GetText("menu_today"):
-                    $data = $weather->today("Urganch");
-                    foreach ($data as $item)
-                    SendMessage(json_encode($item, JSON_PRETTY_PRINT));
+                    $user->setPage("weather_today");
+                    askCity();
+//                    $data = $weather->today("Urganch");
+//                    foreach ($data as $item)
+//                    SendMessage(json_encode($item, JSON_PRETTY_PRINT));
                     break;
                 case $user->GetText("menu_tomorrow"):
-                    $data = $weather->tomorrow("Urganch");
-                    foreach ($data as $item)
-                    SendMessage(json_encode($item, JSON_PRETTY_PRINT));
+                    $user->setPage("weather_tomorrow");
+                    askCity();
+//                    $data = $weather->tomorrow("Urganch");
+//                    foreach ($data as $item)
+//                    SendMessage(json_encode($item, JSON_PRETTY_PRINT));
                     break;
                 case $user->GetText("menu_day"):
-                    $data = $weather->week("Urganch");
-                    foreach ($data as $item)
-                    SendMessage(json_encode($item, JSON_PRETTY_PRINT));
+                    $user->setPage("weather_week");
+                    askCity();
+//                    $data = $weather->week("Urganch");
+//                    foreach ($data as $item)
+//                    SendMessage(json_encode($item, JSON_PRETTY_PRINT));
                     break;
                 case $user->GetText("menu_settings"):
                     chooseLanguage();
@@ -117,6 +125,25 @@ function showMainPage()
     $telegram->sendMessage($content);
 }
 
+function askCity(){
+    global $chat_id, $telegram, $user;
+//    $user->setPage("main");
+
+    $text = $user->GetText("text_location");
+
+    $options = [
+        [$telegram->buildKeyboardButton($user->GetText("write_location"))],
+        [$telegram->buildKeyboardButton($user->GetText("send_location"), false, true)],
+    ];
+    $keyboard = $telegram->buildKeyBoard($options, false, true);
+    $content = [
+        'chat_id' => $chat_id,
+        'reply_markup' => $keyboard,
+        'text' => $text,
+    ];
+    $telegram->sendMessage($content);
+}
+
 function SendMessage($text)
 {
     global $chat_id, $telegram;
@@ -126,5 +153,14 @@ function SendMessage($text)
     ];
     $telegram->sendMessage($content);
 }
+
+//$show = " 📍 Name: " . $data['location']['name'] . "\n" .
+//    " 📍 Region: " . $data['location']['region'] . "\n" .
+//    " 📍 Country: " . $data['location']['country'] . "\n" .
+//    " 🌡 Temperature: " . $data['current']['temp_c'] . "\n" .
+//    " 🌪 Wind: " . $data['current']['wind_mph'] . "\n" .
+//    " 💧 Humidity: " . $data['current']['humidity'] . "\n" .
+//    " 🕔 Time: " . $data['current']['last_updated'] . "\n";
+
 
 ?>
